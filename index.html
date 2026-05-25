@@ -6,14 +6,15 @@
     <title>Aprenda a Fazer Anúncios no Instagram - Do Zero ao Resultado</title>
     <style>
         :root {
-            --bg-color: #0b0813; /* Preto profundo com fundo levemente roxo */
-            --card-bg: #141122; /* Roxo escuro fechado para os cards */
-            --primary-pink: #ff4785; /* Rosa Magenta vibrante */
-            --primary-purple: #8a4fff; /* Roxo Neon */
+            --bg-color: #06040a; /* Preto ainda mais profundo e moderno */
+            --card-bg: #110e1c; /* Roxo cirúrgico escuro para os blocos */
+            --primary-pink: #ff3377; /* Neon Pink ultra-vibrante e elegante */
+            --primary-purple: #9d4edd; /* Roxo Elétrico premium */
             --text-color: #ffffff;
             --text-secondary: #b3aebf;
             --whatsapp-color: #25d366;
-            --purple-gradient: linear-gradient(135deg, #8a4fff 0%, #ff4785 100%);
+            --purple-gradient: linear-gradient(135deg, #9d4edd 0%, #ff3377 100%);
+            --card-border: 1px solid rgba(157, 78, 221, 0.15);
         }
 
         * {
@@ -21,42 +22,46 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            line-height: 1.5;
+            padding: 0;
+            margin: 0;
         }
 
         .container {
+            width: 100%;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 24px;
         }
 
         /* --- HERO SECTION --- */
         header {
             text-align: center;
-            padding: 90px 20px 50px 20px;
-            background: radial-gradient(circle at top, #2d134d 0%, var(--bg-color) 70%);
+            padding: 60px 0 40px 0;
+            background: radial-gradient(circle at top, #2d114d 0%, var(--bg-color) 80%);
         }
 
         .tagline {
             color: var(--primary-pink);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         h1 {
-            font-size: 2.8rem;
-            line-height: 1.2;
-            margin-bottom: 25px;
+            font-size: 2rem;
+            line-height: 1.25;
+            margin-bottom: 20px;
             font-weight: 800;
-            color: var(--text-color);
+            letter-spacing: -0.5px;
         }
 
         h1 span {
@@ -66,42 +71,46 @@
         }
 
         .exclusive-tag {
-            background-color: rgba(138, 79, 255, 0.15);
+            background-color: rgba(157, 78, 221, 0.15);
             color: #e0ceff;
             display: inline-block;
-            padding: 8px 24px;
+            padding: 6px 20px;
             border-radius: 50px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
-            margin-bottom: 30px;
-            border: 1px solid rgba(138, 79, 255, 0.3);
-            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(157, 78, 221, 0.3);
         }
 
         .subtitle {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 40px auto;
+            max-width: 640px;
+            margin: 0 auto 35px auto;
         }
 
-        /* --- QUICK INFO BAR --- */
+        /* --- QUICK INFO BAR (RESPONSIVA) --- */
         .info-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr); /* 2 por linha em telas pequenas */
+            gap: 12px;
             background: var(--card-bg);
-            border: 1px solid #251f3d;
-            padding: 24px;
+            border: var(--card-border);
+            padding: 20px;
             border-radius: 16px;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             text-align: center;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
         }
 
+        /* O último item vai ocupar a linha inteira no mobile para equilibrar o grid ímpar */
+        .info-item:last-child {
+            grid-column: span 2;
+        }
+
         .info-item h4 {
             color: var(--primary-pink);
-            font-size: 1rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
             margin-bottom: 4px;
             letter-spacing: 0.5px;
@@ -113,44 +122,47 @@
             font-weight: 600;
         }
 
+        /* --- BOTÕES RESPONSIVOS --- */
         .btn {
-            display: inline-block;
-            padding: 18px 45px;
+            display: block; /* Ocupa largura total clicável em dispositivos móveis */
+            width: 100%;
+            max-width: 380px;
+            margin: 0 auto;
+            padding: 16px 24px;
             background: var(--purple-gradient);
             color: #ffffff;
             font-weight: 700;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             text-decoration: none;
             border-radius: 50px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 25px rgba(138, 79, 255, 0.4);
+            transition: all 0.25s ease;
+            box-shadow: 0 8px 25px rgba(157, 78, 221, 0.3);
             cursor: pointer;
             border: none;
+            text-align: center;
         }
 
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 30px rgba(255, 71, 133, 0.5);
+        .btn:active {
+            transform: scale(0.98);
         }
 
         /* --- TARGET AUDIENCE SECTION --- */
         .target-section {
-            padding: 70px 0;
+            padding: 40px 0;
         }
 
         .target-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
+            display: flex;
+            flex-direction: column; /* Coluna única empilhada no celular */
+            gap: 20px;
+            margin-top: 25px;
         }
 
         .target-card {
             background-color: var(--card-bg);
-            padding: 40px 35px;
+            padding: 30px 24px;
             border-radius: 20px;
-            border: 1px solid #231c3a;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: var(--card-border);
             position: relative;
             overflow: hidden;
         }
@@ -160,47 +172,35 @@
             position: absolute;
             top: 0;
             left: 0;
-            width: 5px;
+            width: 4px;
             height: 100%;
             background: var(--primary-pink);
         }
 
         .target-card h3 {
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 700;
         }
 
         .target-card p {
             color: var(--text-secondary);
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         /* --- AUTHORITY SECTION --- */
         .authority-section {
-            background: linear-gradient(135deg, #18132b 0%, #100b1e 100%);
-            padding: 60px 50px;
+            background: linear-gradient(135deg, #161026 0%, #0d091a 100%);
+            padding: 35px 24px;
             border-radius: 24px;
-            margin: 50px 0;
-            border: 1px solid #2d224e;
-        }
-
-        .authority-grid {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .authority-text {
-            flex: 1;
-            min-width: 280px;
+            margin: 40px 0;
+            border: var(--card-border);
         }
 
         .authority-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
             font-weight: 800;
         }
 
@@ -210,88 +210,86 @@
 
         .authority-text p {
             color: var(--text-secondary);
-            margin-bottom: 20px;
-            font-size: 1.05rem;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
         }
 
         .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .stat-card {
             background-color: var(--card-bg);
-            padding: 20px;
+            padding: 16px;
             border-radius: 12px;
             border-left: 4px solid var(--primary-purple);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         .stat-card .number {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 800;
             color: #ffffff;
             display: block;
         }
 
         .stat-card .label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            margin-top: 5px;
+            margin-top: 3px;
             display: block;
         }
 
         /* --- PILARES DO CURSO --- */
         .features {
-            padding: 70px 0;
+            padding: 40px 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 40px;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
             font-weight: 800;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
+            grid-template-columns: 1fr; /* Um por linha por padrão (Mobile-First) */
+            gap: 16px;
         }
 
         .feature-card {
             background-color: var(--card-bg);
-            padding: 35px 25px;
+            padding: 30px 20px;
             border-radius: 16px;
             text-align: center;
-            border: 1px solid #231c3a;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: var(--card-border);
         }
 
         .feature-card h3 {
             color: var(--primary-purple);
-            margin-bottom: 15px;
-            font-size: 1.15rem;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
             font-weight: 700;
         }
 
         .feature-card p {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             color: var(--text-secondary);
         }
 
         /* --- OFERTA --- */
         .offer-section {
             text-align: center;
-            padding: 80px 40px;
+            padding: 50px 20px;
             background: var(--card-bg);
             border-radius: 24px;
-            border: 1px solid #2d224e;
-            margin: 60px 0;
+            border: var(--card-border);
+            margin: 40px 0;
             box-shadow: 0 15px 40px rgba(0,0,0,0.3);
         }
 
@@ -300,93 +298,95 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 25px;
-            font-size: 1rem;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
         }
 
         .price-old {
             text-decoration: line-through;
             color: var(--text-secondary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         .price-current {
-            font-size: 4rem;
+            font-size: 3.2rem;
             font-weight: 800;
             color: #ffffff;
-            margin: 10px 0;
+            margin: 5px 0;
             letter-spacing: -1px;
         }
 
         .price-conditions {
-            background-color: rgba(138, 79, 255, 0.1);
-            display: inline-block;
-            padding: 25px 35px;
+            background-color: rgba(157, 78, 221, 0.08);
+            display: block;
+            padding: 20px;
             border-radius: 16px;
-            margin-bottom: 40px;
-            border-left: 5px solid var(--primary-pink);
+            margin: 0 auto 30px auto;
+            border-left: 4px solid var(--primary-pink);
             text-align: left;
-            max-width: 550px;
-            border: 1px solid rgba(138, 79, 255, 0.2);
+            border-top: var(--card-border);
+            border-right: var(--card-border);
+            border-bottom: var(--card-border);
         }
 
         .price-conditions p {
-            margin-bottom: 8px;
-            font-size: 1.05rem;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
             color: #ffffff;
         }
 
         /* --- CHECKOUT PIX --- */
         .pix-box {
-            background-color: #0b0813;
+            background-color: #06040a;
             color: #ffffff;
-            padding: 40px 30px;
+            padding: 30px 20px;
             border-radius: 20px;
-            max-width: 450px;
-            margin: 50px auto 0 auto;
-            border: 1px solid #2d224e;
+            width: 100%;
+            max-width: 400px;
+            margin: 40px auto 0 auto;
+            border: var(--card-border);
             text-align: left;
         }
 
         .pix-box h4 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
             font-weight: 700;
             text-align: center;
         }
 
         .qr-container {
-            width: 220px;
-            height: 220px;
+            width: 180px;
+            height: 180px;
             background-color: #ffffff;
-            margin: 0 auto 25px auto;
+            margin: 0 auto 20px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #777;
-            border: 2px dashed #8a4fff;
+            border: 2px dashed #9d4edd;
             border-radius: 12px;
             text-align: center;
         }
 
         .pix-chave-info {
-            font-size: 1rem;
-            background-color: #141122;
-            padding: 20px 15px;
+            font-size: 0.95rem;
+            background-color: #110e1c;
+            padding: 15px;
             border-radius: 12px;
-            border: 1px solid #2d224e;
+            border: var(--card-border);
             margin-top: 15px;
             text-align: center;
         }
 
         .btn-copy {
             margin-top: 12px;
-            background: rgba(255, 47, 133, 0.15);
+            background: rgba(255, 51, 119, 0.15);
             color: var(--primary-pink);
             border: 1px solid var(--primary-pink);
-            padding: 10px 20px;
-            font-size: 0.9rem;
+            padding: 12px 20px;
+            font-size: 0.95rem;
             font-weight: 700;
             border-radius: 8px;
             cursor: pointer;
@@ -394,67 +394,109 @@
             transition: all 0.2s ease;
         }
 
-        .btn-copy:hover {
-            background: var(--primary-pink);
-            color: #ffffff;
-        }
-
         /* --- WHATSAPP VIP --- */
         .whatsapp-vip {
             background-color: rgba(37, 211, 102, 0.05);
-            border: 1px solid rgba(37, 211, 102, 0.3);
-            padding: 40px 30px;
+            border: 1px solid rgba(37, 211, 102, 0.25);
+            padding: 30px 20px;
             border-radius: 20px;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 40px;
         }
 
         .whatsapp-vip h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .whatsapp-vip p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
         }
 
         .btn-whatsapp {
             background-color: var(--whatsapp-color);
             color: white;
-            padding: 16px 35px;
+            padding: 14px 28px;
             border-radius: 50px;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 10px;
             font-weight: 700;
-            margin-top: 20px;
+            font-size: 1rem;
+            margin-top: 15px;
+            width: 100%;
+            max-width: 320px;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .btn-whatsapp:hover {
-            transform: translateY(-2px);
+            transition: transform 0.2s ease;
         }
 
         footer {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
             color: var(--text-secondary);
-            font-size: 0.9rem;
-            border-top: 1px solid #231c3a;
+            font-size: 0.85rem;
+            border-top: 1px solid #1c172e;
         }
 
-        .visual-proof-ref {
-            font-style: italic;
-            color: #555;
-            font-size: 0.75rem;
-            margin-top: 15px;
-            text-align: center;
+        /* ==========================================
+           ⚡ MEDIA QUERIES (DESKTOP & IPADS)
+           ========================================== */
+        @media (min-width: 480px) {
+            .info-bar {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .info-item:last-child {
+                grid-column: span 1;
+            }
         }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.1rem; }
-            .price-current { font-size: 3rem; }
-            .authority-section { padding: 40px 25px; }
-            .target-grid { grid-template-columns: 1fr; }
-            .offer-section { padding: 50px 20px; }
+        @media (min-width: 768px) {
+            h1 { font-size: 2.8rem; }
+            .section-title { font-size: 2rem; }
+            .subtitle { font-size: 1.25rem; }
+            
+            .info-bar {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+                padding: 24px;
+            }
+            .info-item:last-child {
+                grid-column: unset;
+            }
+
+            .target-grid {
+                flex-direction: row;
+                gap: 30px;
+            }
+            .target-card { flex: 1; }
+
+            .stats-grid {
+                flex-direction: row;
+                gap: 20px;
+            }
+            .stat-card { flex: 1; }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .btn {
+                width: auto;
+                display: inline-block;
+            }
+            .btn-whatsapp {
+                width: auto;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
     </style>
 </head>
@@ -492,11 +534,11 @@
                 </div>
             </div>
 
-            <a href="#inscricao" class="btn">Garantir Minha Vaga no Curso</a>
+            <a href="#inscricao" class="btn">Garantir Minha Vaga</a>
         </div>
     </header>
 
-    <!-- --- SEÇÃO PÚBLICO ALVO (DORES & DESEJOS) --- -->
+    <!-- --- SEÇÃO PÚBLICO ALVO --- -->
     <section class="container target-section">
         <h2 class="section-title">Para quem é este treinamento?</h2>
         <div class="target-grid">
@@ -514,22 +556,20 @@
     <!-- --- SEÇÃO AUTORIDADE MHTHCELI --- -->
     <section class="container">
         <div class="authority-section">
-            <div class="authority-grid">
-                <div class="authority-text">
-                    <p class="tagline" style="margin-bottom:5px;">Quem vai te guiar?</p>
-                    <h2>Com <span>Mhthceli</span></h2>
-                    <p>Você não vai aprender com quem apenas teoriza, mas com quem vive o mercado de anúncios diariamente. Mhthceli é <strong>Gestora de Tráfego de grandes redes de franquias</strong> e especialista em posicionamento estratégico.</p>
-                    <p>Ela abre a caixa preta das ferramentas profissionais para te ensinar exatamente o que funciona no mundo real.</p>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <span class="number">+40</span>
-                            <span class="label">Contas Ativas de Anúncios</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="number">+R$ 20k</span>
-                            <span class="label">Gerenciados Mensalmente</span>
-                        </div>
+            <div class="authority-text">
+                <p class="tagline" style="margin-bottom:5px;">Quem vai te guiar?</p>
+                <h2>Com <span>Mhthceli</span></h2>
+                <p>Você não vai aprender com quem apenas teoriza, mas com quem vive o mercado de anúncios diariamente. Mhthceli é <strong>Gestora de Tráfego de grandes redes de franquias</strong> e especialista em posicionamento estratégico.</p>
+                <p>Ela abre a caixa preta das ferramentas profissionais para te ensinar exatamente o que funciona no mundo real.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="number">+40</span>
+                        <span class="label">Contas Ativas de Anúncios</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">+R$ 20k</span>
+                        <span class="label">Gerenciados Mensalmente</span>
                     </div>
                 </div>
             </div>
@@ -573,7 +613,7 @@
             </div>
 
             <div>
-                <a href="#checkout-pix" class="btn">Quero Reservar Minha Vaga por R$ 50</a>
+                <a href="#checkout-pix" class="btn">Reservar Vaga por R$ 50</a>
             </div>
 
             <!-- --- CHECKOUT PIX INTEGRADO --- -->
@@ -581,25 +621,25 @@
                 <h4>Inscrição via PIX</h4>
                 
                 <div class="qr-container">
-                    <p style="padding: 10px; font-weight: 600; color: #555;">[ Ler QR Code do Panfleto ]<br><span style="font-size:0.75rem; font-weight:normal; color:#999;">Abra o app do seu banco para escanear o código oficial</span></p>
+                    <p style="padding: 10px; font-weight: 600; color: #555;">[ Ler QR Code do Panfleto ]<br><span style="font-size:0.75rem; font-weight:normal; color:#999;">Abra o app do seu banco para escanear</span></p>
                 </div>
 
-                <p style="font-size: 0.95rem; margin-bottom: 2px; font-weight: 700; color: var(--text-secondary);">Valor do Lote Atual (Taxa de Reserva):</p>
-                <p style="font-size: 1.8rem; font-weight: 800; color: var(--primary-pink); margin-bottom: 20px;">R$ 50,00</p>
+                <p style="font-size: 0.9rem; margin-bottom: 2px; font-weight: 700; color: var(--text-secondary); text-align: center;">Taxa de Reserva:</p>
+                <p style="font-size: 1.8rem; font-weight: 800; color: var(--primary-pink); margin-bottom: 20px; text-align: center;">R$ 50,00</p>
 
                 <div class="pix-chave-info">
-                    <strong style="text-transform: uppercase; font-size: 0.8rem; color: var(--text-secondary); display:block; margin-bottom:5px;">Chave Pix Oficial (CNPJ):</strong>
-                    <span id="chave-pix" style="font-family: monospace; font-size: 1.1rem; font-weight: 700; color: #ffffff; display: block; margin-bottom: 10px;">45.731.464/0001-06</span>
+                    <strong style="text-transform: uppercase; font-size: 0.75rem; color: var(--text-secondary); display:block; margin-bottom:5px;">Chave Pix (CNPJ):</strong>
+                    <span id="chave-pix" style="font-family: monospace; font-size: 1.05rem; font-weight: 700; color: #ffffff; display: block; margin-bottom: 10px;">45731464000106</span>
                     <button class="btn-copy" onclick="copiarChavePix()">Copiar Chave PIX</button>
                 </div>
             </div>
 
             <!-- --- ENTRADA NO GRUPO VIP DE WHATSAPP --- -->
             <div class="whatsapp-vip">
-                <h3>Realizou o pagamento da taxa ou ficou com dúvidas?</h3>
-                <p>Fale conosco ou envie seu comprovante agora mesmo para garantir o seu acesso à sala online.</p>
-                <a href="#" class="btn-whatsapp" target="_blank">
-                    <svg width="22" height="22" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
+                <h3>Realizou o pagamento da taxa ou tem dúvidas?</h3>
+                <p>Clique no botão abaixo para enviar o comprovante ou conversar diretamente conosco.</p>
+                <a href="https://wa.me/5585988433968?text=Ol%C3%A1!%20Gostaria%20de%20confirmar%20minha%20vaga%20no%20treinamento." class="btn-whatsapp" target="_blank">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: middle;">
                         <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.69-4.98c-.202-.101-1.194-.588-1.378-.653-.185-.066-.32-.098-.456.101-.137.2-.527.653-.646.789-.12.137-.24.154-.442.053-2.034-1.012-3.344-2.249-4.13-3.593-.208-.347.208-.322.596-1.091.064-.13.031-.245-.015-.347-.046-.102-.456-1.1-.625-1.507-.164-.398-.333-.344-.456-.35-.116-.006-.25-.006-.383-.006a.765.765 0 0 0-.55.257c-.179.196-.685.67-0.685 1.636 0 .965.703 1.898.802 2.03 0 .133 1.383 2.112 3.352 2.964.469.203.837.324 1.123.414.471.15.9.129 1.24.078.379-.058 1.194-.488 1.362-.958.168-.47.168-.874.118-.958-.05-.084-.185-.132-.387-.233z"/>
                     </svg>
                     Chamar no WhatsApp VIP
@@ -612,7 +652,6 @@
     <footer>
         <div class="container">
             <p>Do Zero Ao Resultado. Do Conteúdo ao Cliente. Você no controle do seu negócio!</p>
-            <p class="visual-proof-ref">Material reformulado mantendo a fidelidade das informações originais.</p>
         </div>
     </footer>
 
@@ -623,14 +662,14 @@
             const btn = document.querySelector('.btn-copy');
             
             navigator.clipboard.writeText(chaveText).then(() => {
-                btn.innerText = '✓ Copiado!';
+                btn.innerText = '✓ Chave Copiada!';
                 btn.style.background = '#25d366';
                 btn.style.borderColor = '#25d366';
                 btn.style.color = '#ffffff';
                 
                 setTimeout(() => {
                     btn.innerText = 'Copiar Chave PIX';
-                    btn.style.background = 'rgba(255, 47, 133, 0.15)';
+                    btn.style.background = 'rgba(255, 51, 119, 0.15)';
                     btn.style.borderColor = 'var(--primary-pink)';
                     btn.style.color = 'var(--primary-pink)';
                 }, 3000);
